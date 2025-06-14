@@ -5,7 +5,7 @@ import LowerNav from "./LowerNav";
 
 const Container = () => {
   return (
-    <div className="md:w-[90%] min-h-screen w-full bg-gray-900 flex flex-col justify-center items-center mx-auto">
+    <div className="md:w-[90%] min-h-screen w-full flex flex-col justify-center items-center mx-auto">
       <TopNav />
       <MiddleSections />
       <LowerNav />
