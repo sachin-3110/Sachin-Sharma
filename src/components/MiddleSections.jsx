@@ -47,7 +47,7 @@ const MiddleSections = () => {
       </div>
       <div
         id="music&starBox"
-        className="w-full mb-20 md:mb-0 md:w-[40%] flex justify-start items-start min-h-[50vh]"
+        className="w-full mb-20 md:mb-0 md:w-[40%] flex justify-center md:justify-start items-center md:items-start min-h-[50vh]"
       >
         <div
           id="musicBox"
