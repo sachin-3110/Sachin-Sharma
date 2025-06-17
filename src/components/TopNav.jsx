@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from "react";
 import lightrope from "../assets/lightrope.png";
 import ThemeButton from "./ThemeButton";
+import { useLocation } from "react-router-dom";
+import MiddleSections from "./MiddleSections";
+import Contact from "./Contact";
+import About from "./About";
+import Projects from "./Projects";
 
 const TopNav = () => {
+  const pathToName={
+  "/":"Sachin Sharma",
+  "/contact":"Contact ",
+  "/about":"About Me",
+  "/project":"Projects",
+}
+  const location= useLocation()
+  const currentName= location.pathname
+  const displayName= pathToName [currentName] || "Sachin Sharma" 
   const [date, setDate] = useState([]);
   const [Time, setTime] = useState([]);
   useEffect(() => {
@@ -24,9 +38,9 @@ const TopNav = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="w-full flex font-[Avinga] font-bold justify-between border-[1px] border-white m-4 rounded-2xl min-h-[8vh] md:h-[10vh] md:my-5">
+    <div className="w-full my-2 mx-2  flex font-[Avinga] font-bold justify-between border-[1px] border-white rounded-2xl min-h-[8vh] md:h-[10vh] md:my-5">
       <h1 className="text-2xl uppercase font-extrabold flex justify-center items-center p-5 md:text-3xl">
-        Sachin Sharma 
+        {displayName}
       </h1>
       <ThemeButton/>
       

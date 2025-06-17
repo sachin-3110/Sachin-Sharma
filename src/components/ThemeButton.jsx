@@ -5,7 +5,7 @@ const ThemeButton = () => {
   return (
     
     <div>
-        <div className="absolute right-20 h-auto overflow-hidden top-25">
+        <div className="hidden md:fixed right-2 h-auto overflow-hidden top-30">
         <img src={lightrope} className=" h-40 right-20 duration-200 -translate-y-10 active:translate-y-0" alt="" />
       </div>
     </div>
