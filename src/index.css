@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: Avinga;
+    src: url(./assets/Avinga.ttf);
+}
+@font-face {
+    font-family: solenoid;
+    src: url(./assets/solenoidal.ttf);
+}
