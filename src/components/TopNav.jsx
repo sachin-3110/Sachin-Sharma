@@ -45,12 +45,12 @@ const TopNav = () => {
       <ThemeButton/>
       
       <div id="time" className="p-3 flex flex-col justify-center items-center">
-        <div className="text-2xl flex gap-1">
+        <div className="sm:text-2xl flex md:gap-1">
           <h1>{date[0]}/</h1>
           <h1>{date[1]}/</h1>
           <h1>{date[2]?.split(",")[0]}</h1>   
         </div>
-        <div className="flex gap-1 font-bold text-yellow-200">
+        <div className="text-sm sm:text-2xl flex gap-1 font-bold text-yellow-200">
           <h1 className="">{Time[0]}</h1>:<h1 className="">{Time[1]}</h1>:
           <h1 className=" duration-200 animate-bounce text-2xl">
             {Time[2]?.split("").slice(0, 2).join("")}

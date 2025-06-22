@@ -11,16 +11,16 @@ const About = () => {
           PERSONA
         </div>
         <div id="textContainer" className="flex flex-col gap-20">
-          <div id="text">
+          <div id="text" className="font-[cursive]">
             Hello! I'm a <b>Front-End Developer</b> with a love for creating
             beautiful, functional digital experiences.
           </div>
-          <div id="text">
+          <div id="text" className="font-[cursive]">
             With experience spanning from web development to beautiful user
             interaction, I strive to bring a blend of technical expertise and
             creative thinking to every project.
           </div>
-          <div id="text">
+          <div id="text" className="font-[cursive]">
             When I'm not coding, you might find me watching movies, bingeing a
             good series, or just unwinding with some screen time.
           </div>
@@ -45,35 +45,35 @@ const About = () => {
           </div>
           </div>
           <a target="blank" className="w-fit hidden lg:flex cursor-pointer" href="https://drive.google.com/file/d/1RWuAWGe25ZS6ZNA9Lx0y2bowNPHgT-iG/view?usp=drive_link">
-           <button className="p-2 rounded-2xl text-2xl border-2 cursor-pointer hover:bg-[#dadada] hover:text-black duration-200">Resume</button>
+           <button className="p-2 rounded-2xl font-[customfont1]  text-3xl border-2 cursor-pointer hover:bg-[#dadada] hover:text-black duration-200">Resume</button>
           </a>
         </div>
         
       </div>
       <div
         id="imagesSectioon"
-        className="py-10 md:py-0 w-full md:w-[50%] grid grid-cols-2 md:flex flex-col justify-center items-center"
+        className="py-10 md:py-0 w-full md:w-[50%] grid grid-cols-2 md:flex flex-col justify-center items-end"
       >
         <div id="img1" className="overflow-hidden md:h-100 w-auto rounded-2xl">
-          <img src={blackimg2} alt="" className="h-full" />
+          <img src={blackimg2} alt="" className="h-full hover:scale-110 duration-400" />
 
         </div>
         <div
           id="img2"
           className=" sm:h-80 md:h-100 w-auto border overflow-hidden rounded-2xl relative  md:right-20 md:-top-15"
         >
-        <img src={whiteBg} alt=""  className="h-full w-full" />
+        <img src={whiteBg} alt=""  className="h-full w-full hover:scale-110 duration-400" />
         
         </div>
         <div
           id="img3"
           className=" sm:h-80 md:h-100 w-auto overflow-hidden rounded-2xl relative -right-20 -top-20"
         >
-          <img src={blackimg1} alt="" className="h-full" />
+          <img src={blackimg1} alt="" className="h-full hover:scale-110 duration-400" />
           
         </div>
         <a target="blank" className="w-fit md:relative md:right-120  lg:-top-6 lg:hidden justify-self-end cursor-pointer" href="https://drive.google.com/file/d/1RWuAWGe25ZS6ZNA9Lx0y2bowNPHgT-iG/view?usp=drive_link">
-           <button className="p-2 rounded-2xl text-2xl border-2 cursor-pointer hover:bg-[#dadada] hover:text-black duration-200">Resume</button>
+           <button className="p-2 rounded-2xl font-semi text-2xl border-2 cursor-pointer hover:bg-[#dadada] hover:text-black duration-200">Resume</button>
           </a>
       </div>
     </div>

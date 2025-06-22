@@ -8,3 +8,15 @@
     font-family: solenoid;
     src: url(./assets/solenoidal.ttf);
 }
+@font-face {
+    font-family: customfont1;
+    src: url(./assets/customFontface.ttf);
+}
+@font-face {
+    font-family: customfont2;
+    src: url(./assets/customfont2.ttf);
+}
+@font-face {
+    font-family: customfont4;
+    src: url(./assets/customfont4.ttf);
+}
