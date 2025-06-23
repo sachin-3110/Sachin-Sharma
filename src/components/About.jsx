@@ -1,8 +1,6 @@
-import React from "react";
 import whiteBg from '../assets/whiteBg.jpeg';
 import blackimg1 from '../assets/blacbg.jpeg';
 import blackimg2 from '../assets/blackBG.jpeg';
-import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="w-full md:w-[85%] px-2 h-full flex min-h-[50vh] flex-col md:flex-row">
@@ -16,13 +14,22 @@ const About = () => {
             beautiful, functional digital experiences.
           </div>
           <div id="text" className="font-[cursive]">
+          <p>
+            I'm pursuing Bachelors of Technology in<br />Computer Science Engineering. <i>[B.Tech CSE]</i>
+            <br />My College name is........ well does it matter? Even my degree doesn't.
+
+          </p>
+          </div>
+          <div id="text" className="font-[cursive]">
             With experience spanning from web development to beautiful user
             interaction, I strive to bring a blend of technical expertise and
             creative thinking to every project.
           </div>
           <div id="text" className="font-[cursive]">
-            When I'm not coding, you might find me watching movies, bingeing a
-            good series, or just unwinding with some screen time.
+<b>
+
+            Between code commits, I chase footballs, vibes, and episodes back-to-back.
+</b>
           </div>
           <div
             id="hinditext"

@@ -38,8 +38,8 @@ const TopNav = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="w-[90%] my-2 mx-2  flex font-[solenoid] font-bold justify-between border-[1px] border-white rounded-2xl min-h-[8vh] md:h-[10vh] md:my-5">
-      <h1 className="text-2xl uppercase font-extrabold flex justify-center items-center p-5 md:text-3xl">
+    <div className="w-[90%] mx-2  flex font-[solenoid] font-bold justify-center sm:justify-between sm:px-3 border-[1px] flex-col border-white rounded-2xl min-h-[22vh] md:flex-row md:min-h-[10vh] md:my-5">
+      <h1 className="uppercase font-extrabold flex justify-center items-center text-3xl">
         {displayName}
       </h1>
       <ThemeButton/>

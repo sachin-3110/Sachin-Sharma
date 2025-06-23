@@ -7,7 +7,7 @@ const Container = () => {
 
   return (
     <>
-      <div className="w-full relative md:p-0 z-0 min-h-screen flex flex-col items-center mx-auto">
+      <div className="min-w-full border-yellow-500 relative md:p-0 z-0 min-h-screen flex flex-col items-center mx-auto">
         <BackgroundAnimation/>
         <TopNav />
         <Outlet />

@@ -55,8 +55,9 @@ const ProjectGrids = () => {
         {Projects.map((project, index) => (
           <div
             key={index}
-            className="break-inside-avoid relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all group hover:shadow-2xl"
+            className={` relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all group hover:shadow-2xl`}
           >
+            {" "}
             <img
               src={project.projectSS}
               alt={project.projectName}

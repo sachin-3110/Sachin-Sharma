@@ -1,12 +1,11 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import MusicBox from "./MusicBox";
 
 const MiddleSections = () => {
   return (
-    <div className="min-h-[70vh] p-5 w-[88%] flex flex-col md:flex-row">
+    <div className="min-h-[70vh] p-5 w-full sm:w-[88%] flex flex-col md:flex-row">
       <div id="text" className="w-full md:w-[60%] text-center md:text-left ">
-        <div id="text" className="text-7xl uppercase font-[solenoid] lg:text-9xl ">
+        <div id="text" className="text-5xl sm:text-6xl md:text-7xl uppercase font-[solenoid] lg:text-9xl ">
           Wandering Through Wonder
         </div>
         <div
@@ -25,7 +24,7 @@ const MiddleSections = () => {
           id="text"
           className="text-xl  md:text-2xl text-gray-400 font-extralight"
         >
-          I don’t just build websites, I craft digital experiences.
+          I don't just build websites, I craft digital experiences.
         </div>
         <div id="text" className="text-3xl my-10 w-full md:w-9/12">
           {" "}
