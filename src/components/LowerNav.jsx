@@ -18,7 +18,9 @@ const LowerNav = () => {
     },
   ]);
   return (
+  <>
     <div className="flex fixed bottom-4 min-w-[120px] bg-[#45414176] justify-evenly text-white text-2xl md:text-3xl items-center min-h-[8vh] md:h-[8vh] mb-5 border-[1px] w-[40%] rounded-2xl">
+    <div className="w-full h-full bg-[#dadada26] blur-md -z-1 absolute"></div>
       {icons?.map((elem, index) => (
         <div className="group h-full w-full flex justify-center items-center ">
           <div
@@ -42,6 +44,7 @@ const LowerNav = () => {
         </div>
       ))}
     </div>
+  </>
   );
 };
 

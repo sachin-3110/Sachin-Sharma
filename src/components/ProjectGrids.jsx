@@ -51,7 +51,7 @@ const ProjectGrids = () => {
 
   return (
     <div className="flex justify-center px-4 py-10">
-      <div className="w-full max-w-7xl columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
+      <div className="w-full max-w-7xl columns-1 sm:columns-2 md:columns-3 gap-6  space-y-6">
         {Projects.map((project, index) => (
           <div
             key={index}
@@ -61,9 +61,9 @@ const ProjectGrids = () => {
             <img
               src={project.projectSS}
               alt={project.projectName}
-              className="w-full h-auto object-cover"
+              className={`${index===0 || index === 1 ?" h-[40vh] sm:h-auto":""}  w-full object-cover `}
             />
-            <div className="bg-black absolute text-white p-4 group-hover:translate-y-[-100%] transition-transform duration-300">
+            <div className="bg-black shadow-[0px_-13px_69px_-2px_rgba(149,_157,_165,_0.2)] absolute text-white p-4 group-hover:translate-y-[-100%] transition-transform duration-300">
               <h2 className="text-xl font-bold text-center mb-2">
                 {project.projectName}
               </h2>
@@ -74,7 +74,7 @@ const ProjectGrids = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="text-sm bg-white text-black px-3 py-1 rounded-xl">
+                  <button className="text-sm hover:text-white hover:bg-black duration-200 border hover:border-white font-bold bg-white text-black px-3 py-1 rounded-xl">
                     GitHub
                   </button>
                 </a>
@@ -83,7 +83,7 @@ const ProjectGrids = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="text-sm bg-white text-black px-3 py-1 rounded-xl">
+                  <button className="text-sm hover:text-white hover:bg-black duration-200 border hover:border-white font-bold bg-white text-black px-3 py-1 rounded-xl">
                     Live Site
                   </button>
                 </a>
@@ -92,6 +92,7 @@ const ProjectGrids = () => {
           </div>
         ))}
       </div>
+   
     </div>
   );
 };
