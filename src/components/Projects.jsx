@@ -2,7 +2,7 @@ import React from "react";
 import ProjectGrids from "./ProjectGrids";
 const Projects = () => {
   return (
-    <div className="w-[90%] min-h-20 flex flex-col justify-center items-center relative">
+    <div className="w-[90%] min-h-20 py-10 flex flex-col justify-center items-center relative">
       <div
         id="textAndOtherText"
         className="text-2xl flex md:flex-row flex-col justify-between w-full items-center px-10"

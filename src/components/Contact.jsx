@@ -11,8 +11,8 @@ const Contact = () => {
         <Form />
         <div className="w-full my-5 md:w-1/2 flex  flex-col justify-center items-center">
           
-        <div className="flex-none text-[#d1dd4a] text-5xl font-semibold font-[solenoid]  tracking-wider">Reach out to me via:</div>
-        <div className="w-full px-5 sm:px-0 mx-2 h-full flex justify-center border items-center">
+        <div className="flex-none text-[#d1dd4a] text-3xl sm:text-4xl md:text-5xl font-semibold font-[solenoid]  tracking-wider">Reach out to me via:</div>
+        <div className="w-full sm:px-0 mx-2 h-full flex justify-center border items-center">
           <ContactButtons />
         </div>
         </div>

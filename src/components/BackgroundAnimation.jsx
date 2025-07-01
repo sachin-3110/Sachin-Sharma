@@ -4,7 +4,7 @@ const BackgroundAnimation = () => {
  const icon1 = "ri-terminal-window-line";
   const icon2 = "ri-file-code-line";
   const iconArray = [];
-  for (let i = 0; i <= 14; i++) {
+  for (let i = 0; i <= 11; i++) {
     if (i % 2 == 0) {
       iconArray.push(icon1);
     } else iconArray.push(icon2);
@@ -16,8 +16,8 @@ const BackgroundAnimation = () => {
               <div
               className={`${
                 index % 2 == 0
-                  ? "text-8xl items-start justify-end relative top-20 md:top-10 -rotate-10 group-hover:rotate-0 group-hover:translate-x-5 group-hover:translate-y-10 md:border-amber-200"
-                  : "items-end justify-start text-8xl relative rotate-10 group-hover:rotate-0 md:top-20 border-white  group-hover:-translate-x-10 group-hover:-translate-y-5"
+                  ? "text-8xl items-start justify-end relative top-20 md:top-10  group-hover:translate-x-5 group-hover:translate-y-10 md:border-amber-200"
+                  : "items-end justify-start text-8xl relative md:top-20 border-white  group-hover:-translate-x-10 group-hover:-translate-y-5"
               } ${elem} flex justify-center opacity-15 duration-500 h-full `}
             ></div>
             </div>

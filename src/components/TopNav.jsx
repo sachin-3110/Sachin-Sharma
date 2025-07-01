@@ -38,7 +38,7 @@ const TopNav = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="w-[90%] bg-black mx-2  flex font-[solenoid] font-bold justify-center sm:justify-between sm:px-3 border-[1px] flex-col border-white rounded-2xl min-h-[22vh] md:flex-row md:min-h-[10vh] md:my-5">
+    <div className="w-[90%] bg-black m-2  flex font-[solenoid] font-bold justify-center sm:justify-between sm:px-3 border-[1px] flex-col border-white rounded-2xl min-h-[22vh] md:flex-row md:min-h-[10vh] md:my-5">
       <h1 className="uppercase font-extrabold flex justify-center items-center text-3xl">
         {displayName}
       </h1>

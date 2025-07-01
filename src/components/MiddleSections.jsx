@@ -45,7 +45,6 @@ const MiddleSections = () => {
           </NavLink>
         </div>
       </div>
-      <MusicBox/>
     </div>
   );
 };

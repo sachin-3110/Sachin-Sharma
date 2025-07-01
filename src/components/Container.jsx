@@ -3,6 +3,7 @@ import TopNav from "./TopNav";
 import LowerNav from "./LowerNav";
 import { Outlet } from "react-router-dom";
 import BackgroundAnimation from "./BackgroundAnimation";
+import ScrollToTop from "./ScrollToTop";
 const Container = () => {
 
   return (
@@ -10,6 +11,7 @@ const Container = () => {
       <div className="min-w-full border-yellow-500 relative md:p-0 z-0 min-h-screen flex flex-col items-center mx-auto">
         <BackgroundAnimation/>
         <TopNav />
+        <ScrollToTop/>
         <Outlet />
         <LowerNav />
         
