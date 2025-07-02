@@ -20,3 +20,7 @@
     font-family: customfont4;
     src: url(./assets/customfont4.ttf);
 }
+@font-face {
+    font-family: Brigsa;
+    src: url(./assets/Brigsa.ttf);
+}

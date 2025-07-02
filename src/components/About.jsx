@@ -14,24 +14,24 @@ const About = () => {
         <div className="sm:text-8xl text-7xl relative sm:right-10 font-bold font-[solenoid]">
           PERSONA
         </div>
-        <div id="textContainer" className="flex flex-col gap-20">
-          <div id="text" className="text-2xl md:text-xl font-[cursive]">
+        <div id="textContainer" className="flex flex-col gap-20 font-[Brigsa]">
+          <div id="text" className="text-2xl font-[Brigsa]">
             Hello! I'm a <span className={`${specialwords}`} >Front-End Developer</span> with a love for creating
             beautiful, <span className={`${specialwords}`}>functional digital experiences.</span>
           </div>
-          <div id="text" className="text-2xl md:text-xl font-[cursive]">
+          <div id="text" className="text-2xl">
           <p>
             I'm pursuing Bachelors of Technology in<br />Computer Science Engineering. <i>[B.Tech CSE]</i>
             <br />My College name is........ well does it matter? Even my degree doesn't.
 
           </p>
           </div>
-          <div id="text" className="text-2xl md:text-xl font-[cursive] hidden md:inline">
+          <div id="text" className="text-2xl md:text-2xl hidden md:inline">
             With <span className={`${specialwords} text-nowrap h-fit w-fit border`}>experience spanning from web development</span> to beautiful user
             interaction, I strive to bring a blend of technical expertise and
             creative thinking to every project.
           </div>
-          <div id="text" className="text-2xl md:text-xl font-[cursive]">
+          <div id="text" className="text-2xl">
 <b>
 
             Between code commits, I chase <span className={`${specialwords}`}>Football</span>, vibes, and episodes back-to-back.
@@ -52,7 +52,7 @@ const About = () => {
             </span>
             <div
             id="text"
-            className="text-xl text-gray-400 font-extralight"
+            className="text-xl tracking-wider text-white opacity-45  font-extralight"
           >
             Design is not just what it looks like and feels like. <span className=""> Design is how it works.</span>
           </div>
