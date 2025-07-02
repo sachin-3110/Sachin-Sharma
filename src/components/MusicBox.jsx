@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const MusicBox = () => {
   return (
-    <div>MusicBox</div>
-  )
-}
+    <div>
+      <audio src="../assets/790001" controls></audio>
+    </div>
+  );
+};
 
-export default MusicBox
+export default MusicBox;

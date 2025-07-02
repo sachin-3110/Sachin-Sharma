@@ -1,8 +1,13 @@
 import React from "react";
 import ProjectGrids from "./ProjectGrids";
+import { motion } from "motion/react";
 const Projects = () => {
   return (
-    <div className="w-[90%] min-h-20 py-10 flex flex-col justify-center items-center relative">
+    <motion.div 
+       initial={{filter:"blur(20px)"}}
+      animate={{filter:"blur(0px)"}}
+      transition={{duration:.200}}
+    className="w-[90%] min-h-20 py-10 flex flex-col justify-center items-center relative">
       <div
         id="textAndOtherText"
         className="text-2xl flex md:flex-row flex-col justify-between w-full items-center px-10"
@@ -33,7 +38,7 @@ const Projects = () => {
        </div>
       </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,10 +1,15 @@
 import whiteBg from '../assets/whiteBg.jpeg';
 import blackimg1 from '../assets/blacbg.jpeg';
 import blackimg2 from '../assets/blackBG.jpeg';
+import { motion } from 'motion/react';
 const About = () => {
   const specialwords="bg-gray-500 text-white hover:bg-white hover:text-black duration-500 px-2 "
   return (
-    <div className="w-full md:w-[85%] px-2 h-full flex min-h-[50vh] flex-col md:flex-row">
+    <motion.div
+      initial={{filter:"blur(20px)"}}
+      animate={{filter:"blur(0px)"}}
+      transition={{duration:.200}}
+    className="w-full md:w-[85%] px-2 h-full flex min-h-[50vh] flex-col md:flex-row">
       <div className="px-10 w-full md:max-w-[50%] text-xl flex flex-col gap-10 h-full">
         <div className="sm:text-8xl text-7xl relative sm:right-10 font-bold font-[solenoid]">
           PERSONA
@@ -84,7 +89,7 @@ const About = () => {
            <button className="p-2 rounded-2xl font-semi text-2xl border-2 cursor-pointer hover:bg-[#dadada] hover:text-black duration-200">Resume</button>
           </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

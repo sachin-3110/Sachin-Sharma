@@ -1,7 +1,8 @@
 import React from 'react'
-import TopNav from './components/TopNav'
+import TopNav from './components/TopNav/TopNav'
 import Container from './components/Container'
 import { useLocation } from 'react-router-dom'
+import CustomCursor from './components/CustomCursor'
 
 const App = () => {
   return (

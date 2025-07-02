@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import MusicBox from "./MusicBox";
+import { motion } from "motion/react";
 
 const MiddleSections = () => {
   return (
-    <div className="min-h-[70vh] p-5 w-full sm:w-[88%] flex flex-col md:flex-row">
+    <motion.div 
+       initial={{filter:"blur(20px)"}}
+      animate={{filter:"blur(0px)"}}
+      transition={{duration:.200}}
+    className="min-h-[70vh] p-5 w-full sm:w-[88%] flex flex-col md:flex-row">
       <div id="text" className="w-full md:w-[60%] text-center md:text-left ">
         <div id="text" className="text-5xl sm:text-6xl md:text-7xl uppercase font-[solenoid] lg:text-9xl ">
           Wandering Through Wonder
@@ -45,7 +50,7 @@ const MiddleSections = () => {
           </NavLink>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

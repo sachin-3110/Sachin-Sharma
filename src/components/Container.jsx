@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
-import TopNav from "./TopNav";
+import TopNav from "./TopNav/TopNav";
 import LowerNav from "./LowerNav";
 import { Outlet } from "react-router-dom";
 import BackgroundAnimation from "./BackgroundAnimation";
+import { motion } from "motion/react";
 import ScrollToTop from "./ScrollToTop";
+import MusicBox from "./MusicBox";
 const Container = () => {
 
   return (
@@ -12,8 +14,11 @@ const Container = () => {
         <BackgroundAnimation/>
         <TopNav />
         <ScrollToTop/>
-        <Outlet />
+        <Outlet  />
         <LowerNav />
+        
+
+       
         
       </div>
     </>

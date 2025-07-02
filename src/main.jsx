@@ -6,8 +6,7 @@ import 'remixicon/fonts/remixicon.css'
 import MiddleSections from './components/MiddleSections.jsx'
 import About from './components/About.jsx'
 import Projects from './components/Projects.jsx'
-import Contact from './components/Contact.jsx'
-
+import Contact from './components/Contact/Contact.jsx'
 const router=createBrowserRouter([{
   path:"/",
   element:<App/>,
