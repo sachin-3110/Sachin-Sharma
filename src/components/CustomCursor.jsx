@@ -1,27 +1,35 @@
-import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import React, { useEffect } from "react";
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  // Smooth follow:
+  const smoothX = useSpring(x, { stiffness: 200, damping: 25, mass: 0.3 });
+  const smoothY = useSpring(y, { stiffness: 200, damping: 25, mass: 0.3 });
+
+  const size = 48;
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const handleMove = (e) => {
+      x.set(e.clientX - size / 2);
+      y.set(e.clientY - size / 2);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
   }, []);
 
   return (
     <motion.div
-      animate={{ x: position.x - 40, y: position.y - 40 }} // center offset
-      transition={{  }}
-      className="fixed z-[9999] pointer-events-none mix-blend-difference"
+      style={{
+        x: smoothX,
+        y: smoothY,
+      }}
+      className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
     >
-      <div className="w-20 h-20 border-2 border-white flex justify-center items-center rounded-full">
-        <div className="w-12 h-12 bg-black rounded-full" />
-      </div>
+      <div className="w-12 h-12 border-1 border-white rounded-full" />
     </motion.div>
   );
 };

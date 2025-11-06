@@ -1,14 +1,11 @@
 import React from 'react'
 import lightrope from '../assets/lightrope.png'
+import { useState } from 'react'
 const ThemeButton = () => {
-    let newAnimation="group-hover:-translate-y-10"
+    const [first, setfirst] = useState()
   return (
     
-    <div>
-        <div className="hidden md:fixed right-2 h-auto overflow-hidden top-30">
-        <img src={lightrope} className=" h-40 right-20 duration-200 -translate-y-10 active:translate-y-0" alt="" />
-      </div>
-    </div>
+        <img src={lightrope} className=" fixed h-40 right-0 -top-5 active:-top-1 pointer-cursor duration-200 " alt="" />
   )
 }
 

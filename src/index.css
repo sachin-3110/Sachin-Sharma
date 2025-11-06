@@ -24,3 +24,7 @@
     font-family: Brigsa;
     src: url(./assets/Brigsa.ttf);
 }
+
+*{
+    cursor:none;
+}

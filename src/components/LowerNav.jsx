@@ -19,16 +19,17 @@ const LowerNav = () => {
   ]);
   return (
   <>
-    <div className="flex fixed bottom-4 min-w-[120px] bg-[#45414176] justify-evenly text-white text-2xl md:text-3xl items-center min-h-[8vh] md:h-[8vh] mb-5 border-[1px] w-[40%] rounded-2xl">
-    <div className="w-full h-full bg-[#dadada26] blur-md -z-1 absolute"></div>
+    <div className="flex fixed bottom-0 min-w-[12px] bg-[#45414176] justify-evenly text-white text-2xl md:text-3xl items-center min-h-[8vh] md:h-[8vh] mb-5 border-[1px] w-[30%] rounded-2xl">
+    <div className="w-full h-full bg-[#dadada26] blur-lg -z-1 absolute"></div>
       {icons?.map((elem, index) => (
-        <div className="group h-full w-full flex justify-center items-center ">
+        <div key={index+1} className="group h-full flex justify-center items-center ">
           <div
             id="text"
-            className="absolute text-xl linear p-1 scale-0 duration-400 opacity-0 group-hover:scale-100 group-hover:opacity-100 group-hover:-translate-y-[150%] font-bold tracking-[2px]"
+            className="hidden md:flex md:absolute text-xl p-1 scale-0 duration-300 opacity-0 group-hover:scale-100 group-hover:opacity-100 group-hover:-translate-y-[120%] font-bold tracking-[2px]"
           >
             {elem.name}
           </div>
+          
           <NavLink
             to={`${elem.path}`}
             className={({ isActive }) =>
