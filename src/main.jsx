@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider, useLocation, useParams } from 'rea
 import './index.css'
 import App from './App.jsx'
 import 'remixicon/fonts/remixicon.css'
-import MiddleSections from './components/MiddleSections.jsx'
+import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Projects from './components/Projects.jsx'
 import Contact from './components/Contact/Contact.jsx'
@@ -13,7 +13,7 @@ const router=createBrowserRouter([{
   children:[
     {
       path:"/",
-      element:<MiddleSections/>
+      element:<Home/>
     },
     {
       path:"about",

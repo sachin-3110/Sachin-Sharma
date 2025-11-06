@@ -6,6 +6,7 @@ import SunShare from "../assets/SunShare.jpg";
 import Resqore from "../assets/Resqore.jpg";
 
 const ProjectGrids = () => {
+  let shadow = `shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]`
   const [Projects] = useState([
     {
       projectName: "ObysAgency",
@@ -53,37 +54,37 @@ const ProjectGrids = () => {
     <div className="flex justify-center px-4 py-10">
       <div className="w-full max-w-7xl columns-1 sm:columns-2 md:columns-3 gap-6  space-y-6">
         {Projects.map((project, index) => (
-          <div
+<div
             key={index}
-            className={` relative bg-white rounded-2xl shadow-lg overflow-hidden transition-all group hover:shadow-2xl`}
+            className={`${index ===0 || index === 1 ? "text-sm":"text-xl"}  relative rounded-2xl  overflow-hidden transition-all group shadow-[0px_4px_16px_10px_rgba(0,_0,_0,_0.1)] `}
           >
-            {" "}
+<div id="projectTITLE " className="bg-black flex font-extrabold normal text-2xl gap-2"><p>{index}</p><span>{project.projectName}</span></div>
+            
             <img
               src={project.projectSS}
               alt={project.projectName}
-              className={`${index===0 || index === 1 ?" h-[40vh] sm:h-auto":""}  w-full object-cover `}
+              className={`${index===0 || index === 1 ?"h-[40vh] sm:h-auto":""}  w-full object-cover `}
             />
-            <div className="bg-yellow-800 rounded-t-2xl shadow-[-1px_-15px_23px_22px_rgba(255,_255,_255,_0.05)] absolute text-white p-4 group-hover:translate-y-[-100%] transition-transform duration-300">
-              <h2 className="text-xl font-bold text-center mb-2">
-                {project.projectName}
-              </h2>
-              <p className="text-sm text-center mb-4">{project.projectDescp}</p>
-              <div className="flex justify-between px-4 pb-2">
+            <div className={`${index === 1 || index ===0 ?"py-2 max-h-50 shadow-[0px_-50px_41px_-29px_rgba(249,_115,_22,_0.5)]":"py-4 shadow-[0px_-50px_100px_43px_rgba(249,_115,_22,_0.5)]"} bg-yellow-800  absolute text-white   group-hover:translate-y-[-100%] transition-transform duration-300`}>
+              <p className=" mb-2 text-left px-2 ">{project.projectDescp}</p>
+              <div id="buttons" className="border-y-4 flex justify-between w-full ">
                 <a
                   href={project.gitLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="border-white duration-400 border-r-2 w-1/2 hover:bg-white  hover:text-black flex justify-center p-1"
                 >
-                  <button className="text-sm hover:text-white hover:bg-black duration-200  font-bold bg-white text-black px-3 py-1 rounded-xl">
+                  <button className="duration-200  font-bold px-3 py-1 rounded-xl">
                     GitHub
                   </button>
                 </a>
                 <a
+                className="border-white duration-400 border-l-2 w-1/2 flex hover:bg-white  hover:text-black justify-center p-1"
                   href={project.hostedLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="text-sm hover:text-white hover:bg-black duration-200  font-bold bg-white text-black px-3 py-1 rounded-xl">
+                  <button className=" duration-200  font-bold   px-3 py-1 rounded-xl">
                     Live Site
                   </button>
                 </a>

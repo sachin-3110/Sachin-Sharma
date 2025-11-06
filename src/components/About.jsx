@@ -37,26 +37,7 @@ const About = () => {
             Between code commits, I chase <span className={`${specialwords}`}>Football</span>, vibes, and episodes back-to-back.
 </b>
           </div>
-          <div
-            id="hinditext"
-            className="text-3xl flex flex-col  md:text-4xl tracking-tight w-full  md:w-auto font-cursive"
-          >
-            <span className="text-5xl relative -top-8 sm:-top-7  sm:-right-5 md:-right-2 md:-top-10 rotate-y-180 text-gray-300 rotate-180 inline-block ">
-              L
-            </span>
-            <span className="font-[Hindi]">
-              डिज़ाइन केवल यह नहीं है कि यह कैसा दिखता है और कैसा लगता है। डिज़ाइन यह है कि यह कैसे काम करता है।
-            </span>
-            <span className="text-5xl rotate-y-180 relative  sm:right-2 text-gray-300 inline-block ">
-              L
-            </span>
-            <div
-            id="text"
-            className="text-xl tracking-wider text-white opacity-45  font-extralight"
-          >
-            Design is not just what it looks like and feels like. <span className=""> Design is how it works.</span>
-          </div>
-          </div>
+    
           <a target="blank" className="w-fit hidden lg:flex cursor-pointer" href="https://drive.google.com/file/d/1RWuAWGe25ZS6ZNA9Lx0y2bowNPHgT-iG/view?usp=drive_link">
            <button className="p-2 rounded-2xl font-[customfont1]  text-3xl border-2 cursor-pointer hover:bg-[#dadada] hover:text-black duration-200">Resume</button>
           </a>

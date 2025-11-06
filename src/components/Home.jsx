@@ -14,18 +14,6 @@ const MiddleSections = () => {
           Wandering Through Wonder
         </div>
         <div
-          id="hinditext"
-          className="text-3xl flex mt-10 md:text-4xl tracking-tight w-full  md:w-auto"
-        >
-          <span className="text-5xl relative -top-8 sm:-top-7  sm:-right-5 md:-right-2 md:-top-10 rotate-y-180 text-gray-300 rotate-180 inline-block ">
-            L
-          </span>
-          <span className="font-[Hindi]">मैं केवल वेबसाइट नहीं बनाता, बल्कि डिजिटल अनुभवों का रचना करता हूँ।</span>
-          <span className="text-5xl rotate-y-180 relative top-7 sm:right-2 text-gray-300 inline-block ">
-            L
-          </span>
-        </div>
-        <div
           id="text"
           className="text-xl  md:text-2xl text-gray-400 font-extralight"
         >
