@@ -23,8 +23,8 @@ const ContactButtons = () => {
   return (
     <div className="w-full">
       <div className="w-full duration-500 justify-center text-5xl font-[sans] flex-col items-center md:gap-20 gap-10 text-white">
-        {button.map((elem) => (
-          <div className="w-full grid grid-cols-1 place-items-center">
+        {button.map((elem,index) => (
+          <div key={index+1} className="w-full grid grid-cols-1 place-items-center">
             <a
               href={
                 elem.socialMediaName == "Gmail"

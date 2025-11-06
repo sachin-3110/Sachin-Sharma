@@ -9,8 +9,8 @@ const CustomCursor = () => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    Window.addEventListener('mousemove', handleMouseMove);
+    return () =>Window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
