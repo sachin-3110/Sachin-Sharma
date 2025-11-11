@@ -58,28 +58,28 @@ const ProjectGrids = () => {
             key={index}
             className={`${index ===0 || index === 1 ? "text-sm":"text-xl"}  relative rounded-2xl  overflow-hidden transition-all group shadow-[0px_4px_16px_10px_rgba(0,_0,_0,_0.1)] `}
           >
-<div id="projectTITLE " className="bg-black flex font-extrabold normal text-2xl gap-2"><p>{index}</p><span>{project.projectName}</span></div>
+<div id="projectTITLE " className="bg-black flex font-extrabold normal text-2xl gap-2"><p>{index+1}</p>.<span>{project.projectName}</span></div>
             
             <img
               src={project.projectSS}
               alt={project.projectName}
               className={`${index===0 || index === 1 ?"h-[40vh] sm:h-auto":""}  w-full object-cover `}
             />
-            <div className={`${index === 1 || index ===0 ?"py-2 max-h-50 shadow-[0px_-50px_41px_-29px_rgba(249,_115,_22,_0.5)]":"py-4 shadow-[0px_-50px_100px_43px_rgba(249,_115,_22,_0.5)]"} bg-yellow-800  absolute text-white   group-hover:translate-y-[-100%] transition-transform duration-300`}>
+            <div className={`${index === 1 || index ===0 ?"py-2 max-h-50 shadow-[0px_-50px_41px_-29px_rgba(249,_115,_22,_0.5)]":"py-4 shadow-[0px_-50px_100px_43px_rgba(249,_115,_22,_0.5)]"} bg-yellow-800  absolute text-white   group-hover:-translate-y-full group-active:-translate-y-full transition-transform duration-300`}>
               <p className=" mb-2 text-left px-2 ">{project.projectDescp}</p>
               <div id="buttons" className="border-y-4 flex justify-between w-full ">
                 <a
                   href={project.gitLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-white duration-400 border-r-2 w-1/2 hover:bg-white  hover:text-black flex justify-center p-1"
+                  className="border-white duration-400 border-r-2 w-1/2 active:bg-white hover:bg-white active:text-black hover:text-black flex justify-center p-1"
                 >
                   <button className="duration-200  font-bold px-3 py-1 rounded-xl">
                     GitHub
                   </button>
                 </a>
                 <a
-                className="border-white duration-400 border-l-2 w-1/2 flex hover:bg-white  hover:text-black justify-center p-1"
+                className="border-white duration-400 border-l-2 w-1/2 flex active:bg-white hover:bg-white  active:text-black hover:text-black justify-center p-1"
                   href={project.hostedLink}
                   target="_blank"
                   rel="noopener noreferrer"

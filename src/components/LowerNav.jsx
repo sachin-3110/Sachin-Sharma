@@ -19,7 +19,7 @@ const LowerNav = () => {
   ]);
   return (
   <>
-    <div className="flex fixed bottom-0 min-w-[12px] bg-[#45414176] justify-evenly text-white text-2xl md:text-3xl items-center min-h-[8vh] md:h-[8vh] mb-5 border-[1px] w-[30%] rounded-2xl">
+    <div className="flex fixed bottom-0 min-w-[12px] bg-[#45414176] justify-evenly text-white text-2xl md:text-3xl items-center min-h-[8vh] md:h-[8vh] mb-5 border-[1px]  min-w-[40%] rounded-2xl">
     <div className="w-full h-full bg-[#dadada26] blur-lg -z-1 absolute"></div>
       {icons?.map((elem, index) => (
         <div key={index+1} className="group h-full flex justify-center items-center ">
