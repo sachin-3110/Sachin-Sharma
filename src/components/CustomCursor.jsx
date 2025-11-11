@@ -20,9 +20,10 @@ const CustomCursor = () => {
     window.addEventListener("mousemove", handleMove);
     return () => window.removeEventListener("mousemove", handleMove);
   }, []);
+  
 
   return (
-    <motion.div
+    <motion.div id="customcursor"
       style={{
         x: smoothX,
         y: smoothY,

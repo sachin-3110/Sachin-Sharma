@@ -22,7 +22,7 @@ const HeroSection = () => {
       : `Sachin | ${displayName}`;
   }, [displayName]);
   return (
-    <motion.div>
+    <motion.div className="text-center">
       {charArray.map((elem, index) => {
         return (
           <motion.div
