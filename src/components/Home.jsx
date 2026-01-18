@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import MusicBox from "./MusicBox";
-import { motion } from "motion/react";
-import { div, span } from "framer-motion/client";
+import { motion, useAnimation } from "motion/react";
+import { useEffect } from "react";
 
 const MiddleSections = () => {
   const heroDescpVariant = {
@@ -18,6 +18,7 @@ const MiddleSections = () => {
       },
     }),
   };
+
   let heroDescp = `Precision. Performance. Pixel-Perfect.`;
   let splitArr = heroDescp.split(" ");
   return (
