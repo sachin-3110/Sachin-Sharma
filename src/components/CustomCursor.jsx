@@ -1,37 +1,53 @@
-import { motion, useMotionValue, useSpring } from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import React, { useEffect } from "react";
 
 const CustomCursor = () => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  // Smooth follow:
-  const smoothX = useSpring(x, { stiffness: 200, damping: 25, mass: 0.3 });
-  const smoothY = useSpring(y, { stiffness: 200, damping: 25, mass: 0.3 });
+  // 1. Outer Ring Physics (Fast & Responsive)
+  const ringX = useSpring(mouseX, { stiffness: 180, damping: 25, mass: 0.8 });
+  const ringY = useSpring(mouseY, { stiffness: 180, damping: 25, mass: 0.8 });
 
-  const size = 48;
+  // 2. Inner Dot Physics (Higher mass/damping for that "heavy" trailing feel)
+  const dotX = useSpring(mouseX, { stiffness: 200, damping: 25, mass: 2 });
+  const dotY = useSpring(mouseY, { stiffness: 200, damping: 25, mass: 2 });
 
+  
   useEffect(() => {
     const handleMove = (e) => {
-      x.set(e.clientX - size / 2);
-      y.set(e.clientY - size / 2);
+      // Offset by half the size to center it (assuming 40px width/height)
+      mouseX.set(e.clientX - 20);
+      mouseY.set(e.clientY - 20);
     };
 
     window.addEventListener("mousemove", handleMove);
     return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
-  
+  }, [mouseX, mouseY]);
 
   return (
-    <motion.div id="customcursor"
-      style={{
-        x: smoothX,
-        y: smoothY,
-      }}
-      className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
-    >
-      <div className="w-12 h-12 border-1 border-white rounded-full" />
-    </motion.div>
+    <>
+      <motion.div
+        style={{ x: ringX, y: ringY }}
+        className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
+      >
+        <div 
+          className="h-10 w-10 rounded-full border-4 border-white hidden sm:flex justify-center items-center"
+          style={{
+            boxShadow: "inset 0px 0px 8px rgba(255, 255, 255, 0.5)"
+          }}
+        />
+      </motion.div>
+
+      <motion.div
+        style={{ x: dotX, y: dotY }}
+        className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
+      >
+        <div className="h-10 w-10 hidden sm:flex justify-center items-center">
+          <div className="h-2 w-2 bg-white rounded-full shadow-lg" />
+        </div>
+      </motion.div>
+    </>
   );
 };
 

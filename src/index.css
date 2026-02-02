@@ -35,3 +35,15 @@
   -ms-overflow-style: none;  
   scrollbar-width: none;     
 }
+.skillHeading{
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.7rem;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    .skillHeading {
+        font-size: 1.5rem;
+    }
+}

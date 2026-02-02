@@ -1,4 +1,5 @@
 import React from 'react'
+import LightRays from './LightRays';
 
 const BackgroundAnimation = () => {
  const icon1 = "ri-terminal-window-line";
@@ -10,18 +11,24 @@ const BackgroundAnimation = () => {
     } else iconArray.push(icon2);
   }
   return (
-    <div className="w-full text-5xl h-full -z-2 overflow-hidden grid grid-cols-3 grid-rows-5 md:grid-cols-5 md:grid-rows-3 absolute ">
-          {iconArray.map((elem, index) => (
-            <div className="group border-[#dadada29]">
-              <div
-              className={`${
-                index % 2 == 0
-                  ? "text-8xl items-start justify-end relative top-20 md:top-10  group-hover:translate-x-5 group-hover:translate-y-10 md:border-amber-200"
-                  : "items-end justify-start text-8xl relative md:top-20 border-white  group-hover:-translate-x-10 group-hover:-translate-y-5"
-              } ${elem} flex justify-center opacity-15 duration-500 h-full `}
-            ></div>
-            </div>
-          ))}
+    <div className="w-full min-h-screen absolute top-0">
+<div style={{ width: '100%', height: '100%', position: 'fixed', }}>
+  <LightRays
+    raysOrigin="top-center"
+    raysColor="#ffffff"
+    raysSpeed={1.2}
+    lightSpread={0.7}
+    rayLength={3}
+    followMouse={true}
+    mouseInfluence={0.1}
+    noiseAmount={0}
+    distortion={0}
+    className="custom-rays"
+    pulsating={false}
+    fadeDistance={1}
+    saturation={1}
+/>
+</div>
 
         
         </div>

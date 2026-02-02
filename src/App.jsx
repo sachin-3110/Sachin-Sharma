@@ -1,5 +1,4 @@
 import React from 'react'
-import Maintanence from './components/Maintanence.jsx'
 import Home from './Pages/Home/Home.jsx'
 const App = () => {
   return (
