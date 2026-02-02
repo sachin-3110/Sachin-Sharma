@@ -19,7 +19,7 @@ const Form = () => {
   return (
     <div className="w-full md:w-2/3 lg:w-1/2 ">
       <form onSubmit={handleSubmit(onSubmit)} className="relative">
-        <div className="bg-black border text-2xl rounded-2xl mx-4 sm:mx-0 p-4 text-white">
+        <div className=" border text-2xl rounded-2xl mx-4 sm:mx-0 p-4 text-white">
           <h1 className="text-4xl font-bold">Say hi!</h1>
           <div className="flex gap-5 sm:px-4 px-2 my-4 sm:my-8  flex-wrap sm:flex-col">
             <div className="w-full flex flex-col justify-center items-start">
@@ -40,7 +40,7 @@ const Form = () => {
               />
               <div className="font-semibold w-full">
                 {errors.Name && (
-                  <p className="text-center text-sm text-red-500">
+                  <p className="text-center text-sm capitalize text-red-500">
                     {errors.Name.message}
                   </p>
                 )}
@@ -57,7 +57,7 @@ const Form = () => {
                 type="email"
                 className="w-full m-2 border text-xl rounded-2xl p-2"
                 placeholder="you@gmail.com"
-                {...register("mail", { required: "enter you mail"})}
+                {...register("mail", { required: "Enter you gmail"})}
               />
                <div className="font-semibold w-full">
                 {errors.mail && (
@@ -96,7 +96,7 @@ const Form = () => {
           </div>
           <input
             type="submit"
-            className="w-full hover:bg-white bg-black hover:text-black border text-white duration-200 py-2 rounded-2xl my-2"
+            className="w-full hover:bg-white/10 background-drop-filter(blur-2px) border text-white duration-200 py-2 rounded-2xl my-2"
           />
         </div>
       </form>

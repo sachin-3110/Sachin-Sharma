@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import MusicBox from "./MusicBox";
 import { motion, useAnimation } from "motion/react";
 import { useEffect } from "react";
 
@@ -13,7 +12,7 @@ const MiddleSections = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.4 * index,
+        delay: 0.2*index ,
         duration: 0.5,
       },
     }),
@@ -25,7 +24,7 @@ const MiddleSections = () => {
     <motion.div
       initial={{ filter: "blur(20px)" }}
       animate={{ filter: "blur(0px)" }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.26 }}
       className="min-h-[70vh] p-5 w-full sm:w-[88%] flex flex-col md:flex-row"
     >
       <div id="text" className="w-full font-semibold text-left md:text-left ">
@@ -36,9 +35,8 @@ const MiddleSections = () => {
                 className=""
                 variants={heroDescpVariant}
                 initial="initial"
-                whileInView="animate"
+                animate="animate"
                 custom={index}
-                viewport={{ once: true }}
               >
                 {elem}
               </motion.div>
@@ -56,21 +54,11 @@ const MiddleSections = () => {
           {" "}
           Designs that move. Code that breathes.
         </div>
-        <div className="buttonContainer pb-[10vh] md:w-[50%] font-extrabold tracking-wider font-[solenoid] flex items-center sm:gap-10 gap-2 sm:m-10 justify-between text-2xl md:text-4xl">
-          <NavLink
-            to={"project"}
-            className="p-3 rounded-2xl bg-gray-200 text-black  hover:scale-105 duration-200"
-          >
-            Works
-          </NavLink>
-          <NavLink
-            to={"contact"}
-            className="p-3 rounded-2xl bg-gray-200 text-black hover:scale-105 duration-200"
-          >
-            Get in touch
-          </NavLink>
-        </div>
+      
       </div>
+      {/* <div className="h-full w-1/2  border-1 rounded-full">
+      
+      </div> */}
     </motion.div>
   );
 };

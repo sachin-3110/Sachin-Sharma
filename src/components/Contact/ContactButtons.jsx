@@ -34,7 +34,7 @@ const ContactButtons = () => {
               className="sm:w-full hidden sm:flex "
               target="_blank"  
             >
-              <button id="badiscreenIconswithText" className="group overflow-hidden relative hidden m-2 justify-center items-center gap-2 sm:flex hover:cursor-pointer border py-6 md:py-8 rounded-2xl bg-black hover:bg-white duration-200  font-semibold w-full hover:text-black">
+              <button id="badiscreenIconswithText" className="group overflow-hidden relative hidden m-2 justify-center items-center gap-2 sm:flex hover:cursor-pointer border py-6 md:py-8 rounded-2xl hover:bg-white duration-200  font-semibold w-full hover:text-black">
                 <i className={` duration-200 ${elem.iconCode}`}></i>
                <span className="w-0 border-2 overflow-hidden inline-block group-hover:w-55 duration-500"> {elem.socialMediaName}</span>
                <span className="durationi-500 group-hover:w-0 group-hover:hidden">{elem.socialMediaName}</span>

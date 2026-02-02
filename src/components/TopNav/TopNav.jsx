@@ -26,9 +26,9 @@ const TopNav = ({light}) => {
       initial={{ filter: "blur(20px)" }}
       animate={{ filter: "blur(0px)" }}
       transition={{ duration: 0.5 }}
-      className="w-[90%] bg-black m-2 flex font-[solenoid] font-bold justify-center sm:justify-between sm:px-3 border-[1px] flex-col border-white rounded-2xl min-h-[15vh] md:flex-row md:min-h-[12vh] "
+      className="w-[90%] inset-shadow-amber-300 z-10 bg-white/10 blur-[10px] m-2 flex  font-[solenoid] font-bold justify-center sm:justify-between sm:px-3 flex-col border-white rounded-2xl min-h-[15vh] md:flex-row md:min-h-[12vh] "
     >
-      <h1 className="normal tracking-wider font-extrabold flex justify-center items-center text-5xl">
+      <h1 className="normal px-5 tracking-wider font-extrabold flex justify-center items-center text-5xl">
         <HeroSection />
       </h1>
 
