@@ -7,6 +7,8 @@ import ThemeButton from "../../components/ThemeButton";
 import CustomCursor from "../../components/CustomCursor";
 import { useState } from "react";
 import BackgroundAnimation from "../../components/BackgroundAnimation";
+import Silk from "@/components/Silk";
+import LocomotiveScroll from "locomotive-scroll";
 
 const Container = () => {
   const [light, setLight] = useState(true);
@@ -14,6 +16,7 @@ const Container = () => {
     setLight(prev => !prev);
     console.log(light);
   };
+  const scroll = new LocomotiveScroll();
 
   return (
     <div className="min-w-full no-scrollbar border-yellow-500 relative md:p-0 z-0 min-h-screen flex flex-col items-center mx-auto">

@@ -1,4 +1,5 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {useMotionValue, useSpring, useTransform } from "motion/react";
+import {motion} from "motion/react";
 import React, { useEffect } from "react";
 
 const CustomCursor = () => {
