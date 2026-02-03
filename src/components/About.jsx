@@ -3,12 +3,15 @@ import blackimg1 from "../assets/blacbg.jpeg";
 import blackimg2 from "../assets/blackBG.jpeg";
 import { motion } from "motion/react";
 import Pills from "./Pills";
+import LocomotiveScroll from "locomotive-scroll";
 import SkillSection from "./SkillSection";
 import Line from "./Line";
 import Headings from "./Headings";
 const About = () => {
   const specialwords =
     "bg-gray-500 text-white hover:bg-white hover:text-black duration-500 px-2 ";
+  const scroll = new LocomotiveScroll();
+
   return (
     <motion.div
       initial={{ filter: "blur(20px)" }}
@@ -41,11 +44,11 @@ const About = () => {
               <br />
               Computer Science Engineering. <i>[B.Tech CSE]</i>
               <br />
-             from <br />
-             <b>
-              St. Andrews Institute Of Technology and Management <br />
-             Gurgaon, Haryana.
-             </b>
+              from <br />
+              <b>
+                St. Andrews Institute Of Technology and Management <br />
+                Gurgaon, Haryana.
+              </b>
             </p>
           </div>
           <Line />
@@ -71,15 +74,17 @@ const About = () => {
         id="imagesSectioon"
         className="py-10 md:py-0 w-full md:w-[50%] grid grid-cols-2 md:flex flex-col justify-center items-end"
       >
-        <div id="img1" className="overflow-hidden md:h-100 w-auto rounded-2xl">
-          <img
+        <div id="img1"
+        data-scroll data-scroll-speed="-0.126"
+        className="overflow-hidden h-55 md:h-100 w-auto rounded-2xl m-2 sm:m-0">
+          <img 
             src={blackimg2}
             alt=""
             className="h-full hover:scale-110 duration-400"
           />
         </div>
         <div
-          id="img2"
+          id="img2" data-scroll data-scroll-speed="-0.156"
           className=" sm:h-80 md:h-100 w-auto border overflow-hidden rounded-2xl relative  md:right-20 md:-top-15"
         >
           <img
@@ -90,6 +95,7 @@ const About = () => {
         </div>
         <div
           id="img3"
+          data-scroll data-scroll-speed="0.156"
           className=" sm:h-80 md:h-100 w-auto overflow-hidden rounded-2xl relative -right-20 -top-20"
         >
           <img

@@ -1,5 +1,6 @@
 import React from 'react'
 import LightRays from './LightRays';
+import Silk from './Silk';
 
 const BackgroundAnimation = () => {
  const icon1 = "ri-terminal-window-line";
@@ -28,6 +29,17 @@ const BackgroundAnimation = () => {
     fadeDistance={1}
     saturation={1}
 />
+
+</div>
+<div className='sm:opacity-20 ' style={{ width: '100%', height: '100%', position: 'fixed', }}>
+<Silk
+  speed={5}
+  scale={1}
+  color="#7B7481"
+  noiseIntensity={1.5}
+  rotation={0}
+/>
+
 </div>
 
         

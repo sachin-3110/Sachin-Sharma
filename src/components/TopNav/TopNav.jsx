@@ -40,7 +40,7 @@ const TopNav = ({light}) => {
           <h1>{date[2]?.split(",")[0]}</h1>
         
         </div>
-        <div className="text-2xl min-w-40 border-2  justify-center rounded-xl flex gap-1 font-bold text-yellow-200">
+        <div className="text-2xl min-w-40 border-2  justify-center rounded-xl flex gap-1 font-bold bg-white text-black tracking-wider shadow-[inset_0px_4px_6px_0px_rgba(0,_0,_0,_0.8)]">
           <h1 className="">{Time[0]}</h1>:<h1 className="">{Time[1]}</h1>:
           <h1 className=" duration-200 animate-none">
             {Time[2]?.split("").slice(0, 2).join("")}

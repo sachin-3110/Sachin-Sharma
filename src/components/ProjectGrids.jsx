@@ -65,7 +65,7 @@ const ProjectGrids = () => {
               alt={project.projectName}
               className={`${index===0 || index === 1 ?"h-[40vh] sm:h-auto":""}  w-full object-cover `}
             />
-            <div className={`${index === 1 || index ===0 ?"py-2 max-h-50 shadow-[0px_-50px_41px_-29px_rgba(249,_115,_22,_0.5)]":"py-4 shadow-[0px_-50px_100px_43px_rgba(249,_115,_22,_0.5)]"} bg-yellow-800  absolute text-white   group-hover:-translate-y-full group-active:-translate-y-full transition-transform duration-300`}>
+            <div className={`${index === 1 || index ===0 ?"p-5 max-h-50 shadow-[0px_-50px_41px_-29px_rgba(249,_115,_22,_0.5)]":"py-4 shadow-[0px_-50px_100px_43px_rgba(249,_115,_22,_0.5)]"} bg-black absolute text-white   group-hover:-translate-y-full group-active:-translate-y-full transition-transform duration-300`}>
               <p className=" mb-2 text-left px-2 ">{project.projectDescp}</p>
               <div id="buttons" className="border-y-4 flex justify-between w-full ">
                 <a
