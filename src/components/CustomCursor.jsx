@@ -3,28 +3,10 @@ import {motion} from "motion/react";
 import React, { useEffect } from "react";
 
 const CustomCursor = () => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
   // 1. Outer Ring Physics (Fast & Responsive)
-  const ringX = useSpring(mouseX, { stiffness: 180, damping: 25, mass: 0.8 });
-  const ringY = useSpring(mouseY, { stiffness: 180, damping: 25, mass: 0.8 });
-
+ 
   // 2. Inner Dot Physics (Higher mass/damping for that "heavy" trailing feel)
-  const dotX = useSpring(mouseX, { stiffness: 200, damping: 25, mass: 2 });
-  const dotY = useSpring(mouseY, { stiffness: 200, damping: 25, mass: 2 });
-
-  
-  useEffect(() => {
-    const handleMove = (e) => {
-      // Offset by half the size to center it (assuming 40px width/height)
-      mouseX.set(e.clientX - 20);
-      mouseY.set(e.clientY - 20);
-    };
-
-    window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, [mouseX, mouseY]);
+ 
 
   return (
     <>

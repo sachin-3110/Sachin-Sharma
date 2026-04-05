@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import { span } from "motion/react-client";
+import LowerNav from "../LowerNav";
 const HeroSection = () => {
   const pathToName = {
     "/contact": "Contact ",
@@ -22,7 +23,7 @@ const HeroSection = () => {
       : `Sachin | ${displayName}`;
   }, [displayName]);
   return (
-    <motion.div className="text-center">
+    <motion.div className="text-center ">
       {charArray.map((elem, index) => {
         return (
           <motion.div

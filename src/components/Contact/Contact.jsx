@@ -19,7 +19,7 @@ const Contact = () => {
           <div className="flex-none text-white text-3xl sm:text-4xl md:text-5xl font-semibold font-[solenoid]  tracking-wider">
             Reach out to me via:
           </div>
-          <div className="w-full sm:px-0 mx-2 h-full flex justify-center border items-center">
+          <div className="w-full sm:px-0 mx-2 h-full flex justify-center items-center">
             <ContactButtons />
           </div>
         </div>

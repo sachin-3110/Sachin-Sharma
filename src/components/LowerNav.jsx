@@ -18,34 +18,24 @@ const LowerNav = () => {
     },
   ]);
   return (
-  <>
-    <div className="flex fixed bottom-0 min-w-[12px] bg-[#45414176] justify-evenly text-white text-2xl md:text-3xl items-center min-h-[8vh] md:h-[8vh] mb-5 border-[1px]  min-w-[40%] rounded-2xl">
-    <div className="w-full h-full bg-[#dadada26] blur-lg -z-1 absolute"></div>
+    <div className="flex bg-white/20 w-full py-2 backdrop-blur-sm justify-evenly text-white text-2xl md:text-3xl items-center h-full rounded-xl">
       {icons?.map((elem, index) => (
-        <div key={index+1} className="group h-full flex justify-center items-center ">
+        <NavLink
+          to={elem.path}
+          key={index + 1}
+          className="group flex flex-col justify-center items-center"
+        >
+        {({isActive})=> <>
+          <i className={`${elem.iconCode}   ${isActive ? "text-yellow-200":""}`}></i>
           <div
-            id="text"
-            className="hidden md:flex md:absolute text-xl p-1 scale-0 duration-300 opacity-0 group-hover:scale-100 group-hover:opacity-100 group-hover:-translate-y-[120%] font-bold tracking-[2px]"
-          >
-            {elem.name}
+            id="circle"
+            className={`${isActive ? "bg-yellow-200 w-2 group-hover:bg-yellow-200 " : ""}group-hover:w-2  group-hover:bg-white duration-200 rounded-full h-2 w-0 bg-transparent `}
+          >           
           </div>
-          
-          <NavLink
-            to={`${elem.path}`}
-            className={({ isActive }) =>
-              `${
-                isActive
-                  ? "text-yellow-200 text-2xl scale-125 duration-400"
-                  : "text-white text-2xl"
-              } ${
-                elem.iconCode
-              } hover:scale-110 w-full h-full flex justify-center items-center`
-            }
-          ></NavLink>
-        </div>
+        </>}
+        </NavLink>
       ))}
     </div>
-  </>
   );
 };
 

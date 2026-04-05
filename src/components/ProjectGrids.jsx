@@ -57,8 +57,6 @@ const ProjectGrids = () => {
       <div className="w-full max-w-7xl columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
         {Projects.map((project, index) => (
           <div
-            data-scroll
-            data-scroll-speed={index % 2 === 0 ? "0.123" : "-0.153"}
             key={index}
             // MOUSE EVENTS (Desktop)
             onMouseEnter={() => setActiveProject(index)}
