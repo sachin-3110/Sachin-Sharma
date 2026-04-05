@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "./HeroSection";
 import { motion } from "motion/react";
+import LowerNav from "../LowerNav";
+import { div } from "motion/react-client";
 const TopNav = ({light}) => {
   const [date, setDate] = useState([]);
   const [Time, setTime] = useState([]);
@@ -22,35 +24,21 @@ const TopNav = ({light}) => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <motion.div
+    <div className="fixed w-full sm:px-20 z-20">
+      <motion.div
       initial={{ filter: "blur(20px)" }}
       animate={{ filter: "blur(0px)" }}
       transition={{ duration: 0.5 }}
-      className="w-[90%] inset-shadow-amber-300 z-10 bg-white/10 blur-[10px] m-2 flex  font-[solenoid] font-bold justify-center sm:justify-between sm:px-3 flex-col border-white rounded-2xl min-h-[15vh] md:flex-row md:min-h-[12vh] "
+      className="w-full bg-white/10 backdrop-blur-sm flex my-2  font-[solenoid] font-bold justify-between items-center  border-white rounded-2xl"
     >
-      <h1 className="normal px-5 tracking-wider font-extrabold flex justify-center items-center text-5xl">
+      <h1 className="px-5 tracking-wider font-extrabold text-3xl">
         <HeroSection />
       </h1>
-
-      <div id="time" className="p-3 flex justify-evenly items-center gap-2 mx-2 mt-2">
-       
-        <div className="text-2xl flex md:gap-1">
-          <h1>{date[0]}/</h1>
-          <h1>{date[1]}/</h1>
-          <h1>{date[2]?.split(",")[0]}</h1>
-        
-        </div>
-        <div className="text-2xl min-w-40 border-2  justify-center rounded-xl flex gap-1 font-bold bg-white text-black tracking-wider shadow-[inset_0px_4px_6px_0px_rgba(0,_0,_0,_0.8)]">
-          <h1 className="">{Time[0]}</h1>:<h1 className="">{Time[1]}</h1>:
-          <h1 className=" duration-200 animate-none">
-            {Time[2]?.split("").slice(0, 2).join("")}
-          </h1>
-          <h1 className="uppercase duration-200">
-            {Time[2]?.split("").slice(2, 5).join("")}
-          </h1>
-        </div>
-      </div>
+       <div className="h-full flex justify-center item-center p-2 w-1/2">
+         <LowerNav/> 
+       </div>
     </motion.div>
+    </div>    
   );
 };
 

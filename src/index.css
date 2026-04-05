@@ -28,10 +28,6 @@
     font-family: Brigsa;
     src: url(./assets/Brigsa.ttf);
 }
-
-*{
-    cursor:none;
-}
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
