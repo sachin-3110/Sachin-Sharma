@@ -18,7 +18,7 @@ const Container = () => {
 
   return (
     <div className="w-full no-scrollbar p-2 border-yellow-500 relative z-0 min-h-screen flex flex-col items-center ">
-      <BackgroundAnimation/>
+      <BackgroundAnimation/>  
       <div className="absolute z-5">
       </div>
       <TopNav theme={light} />

@@ -2,7 +2,6 @@ import React from "react";
 import ProjectGrids from "./ProjectGrids";
 import { motion } from "motion/react";
 const Projects = () => {
-  
   return (
     <motion.div
       initial={{ filter: "blur(20px)" }}
@@ -29,16 +28,22 @@ const Projects = () => {
       </div>
       <div>
         <ProjectGrids />
-        <div className="text-center flex justify-end items-center gap-2 w-full mb-40 md:-mb-10 md:w-100 md:absolute bottom-40 right-0 overflow-hidden">
-          <div className="">
-            There are 30+ repos on my github you can check it out by clicking
-            button below
-            <a href="https://github.com/sachin-3110" target="blank">
-              <button className="bg-white text-black p-2 m-2 rounded-full font-semibold border hover:text-white hover:bg-black">
-                GitHub
-              </button>
-            </a>
-          </div>
+        <div className="flex justify-center w-screen m-10">
+          <motion.div
+            initial={{ x: 20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.5, repeat: 0 }}
+          >
+            <div className="w-fit p-2 rounded-full pl-5 bg-black/20 backdrop:blur-2xl flex font-semibold justify-center items-center">
+              A click away from 35+ Projects
+              <a href="https://github.com/sachin-3110" target="blank">
+                <button className="bg-white text-black p-1 cursor-pointer m-2 rounded-full font-semibold border hover:text-white hover:bg-black">
+                  GitHub
+                </button>
+              </a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
