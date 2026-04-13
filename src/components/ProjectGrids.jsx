@@ -6,7 +6,7 @@ import SunShare from "../assets/SunShare.jpg";
 import MontBold from "../assets/montBoldss.png";
 import Resqore from "../assets/Resqore.jpg";
 import LocomotiveScroll from "locomotive-scroll";
-import DKSDesign from "../assets/DKSDesign.png"
+import DKSDesign from "../assets/dksDesign.png"
 
 import { Link } from "react-router-dom";
 
