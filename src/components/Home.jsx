@@ -56,9 +56,7 @@ const MiddleSections = () => {
         </div>
       
       </div>
-      {/* <div className="h-full w-1/2  border-1 rounded-full">
-      
-      </div> */}
+
     </motion.div>
   );
 };
