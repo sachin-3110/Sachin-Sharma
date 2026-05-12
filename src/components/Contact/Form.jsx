@@ -1,26 +1,55 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { motion, AnimatePresence } from "motion/react";
+import { User, Mail, Phone, MessageSquare, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+
+// Compound-like Field Component for consistent styling
+const FormField = ({ label, icon: Icon, error, children }) => (
+  <div className="flex flex-col gap-2 mb-6 group">
+    <div className="flex items-center gap-2 px-1">
+      {Icon && <Icon size={18} className="text-white/60 group-focus-within:text-white transition-colors" />}
+      <label className="text-sm font-medium tracking-wide text-white/80 group-focus-within:text-white uppercase transition-colors">
+        {label}
+      </label>
+    </div>
+    <div className="relative">
+      {children}
+    </div>
+    <AnimatePresence>
+      {error && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="flex items-center gap-1 mt-1 text-red-400 text-xs px-1"
+        >
+          <AlertCircle size={12} />
+          <span>{error.message}</span>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+);
 
 const Form = () => {
-  const [result, setResult] = useState("");
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+  const [errorMessage, setErrorMessage] = useState("");
 
-  // Initialize React Hook Form
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onBlur"
+  });
 
-  // The 'data' argument contains all your field values
   const onSubmit = async (data) => {
-    setResult("Sending....");
+    setStatus("loading");
 
-    // Prepare data for Web3Forms
     const formData = new FormData();
     formData.append("access_key", "83369596-a731-46c4-af11-4cf28b11658d");
     
-    // Append all form fields to formData
     Object.keys(data).forEach((key) => {
       formData.append(key, data[key]);
     });
@@ -34,111 +63,177 @@ const Form = () => {
       const resData = await response.json();
 
       if (resData.success) {
-        setResult("Form Submitted Successfully");
-        reset(); // Clears the form fields
+        setStatus("success");
+        reset();
+        setTimeout(() => setStatus("idle"), 5000);
       } else {
-        setResult("Error: " + resData.message);
+        setStatus("error");
+        setErrorMessage(resData.message || "Something went wrong.");
+        setTimeout(() => setStatus("idle"), 5000);
       }
     } catch (error) {
-      setResult("An error occurred. Please try again.");
+      setStatus("error");
+      setErrorMessage("An error occurred. Please try again.");
+      setTimeout(() => setStatus("idle"), 5000);
     }
   };
 
+  const inputClasses = (hasError) => `
+    w-full bg-white/5 border backdrop-blur-sm rounded-xl px-4 py-3 text-white placeholder:text-white/20
+    outline-none transition-all duration-300
+    ${hasError ? 'border-red-500/50 focus:border-red-500 ring-1 ring-red-500/20' : 'border-white/10 focus:border-white/40 focus:bg-white/10 focus:ring-2 focus:ring-white/5'}
+  `;
+
   return (
-    <div className="w-full md:w-2/3 lg:w-1/2">
-      {/* Wrap with handleSubmit */}
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="w-full md:w-1/2"
+    >
       <form onSubmit={handleSubmit(onSubmit)} className="relative">
-        <div className="border text-2xl rounded-2xl mx-4 sm:mx-0 p-4 text-white bg-zinc-900/20 backdrop:blur-2xl">
-          <h1 className="text-4xl font-bold">Say hi!</h1>
+        <div className="relative overflow-hidden border border-white/10 rounded-3xl p-8 sm:p-12 text-white bg-zinc-950/40 backdrop-blur-xl shadow-2xl">
+          
+          {/* Decorative elements */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/5 blur-3xl rounded-full" />
+          <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-white/5 blur-3xl rounded-full" />
 
-          <div className="flex gap-5 sm:px-4 px-2 my-4 sm:my-8 flex-wrap flex-col">
-            
-            {/* Name */}
-            <div className="w-full flex flex-col">
-              <label className="font-semibold text-xl sm:text-2xl">Name</label>
-              <input
-                type="text"
-                className={`w-full m-2 border text-xl rounded-2xl p-2 bg-transparent ${
-                  errors.Name ? "border-red-500" : "border-white"
-                }`}
-                placeholder="Your Name"
-                {...register("Name", {
-                  required: "Your name is important",
-                  maxLength: { value: 15, message: "Max 15 characters" },
-                })}
-              />
-              {errors.Name && (
-                <p className="text-sm text-red-500 ml-2">{errors.Name.message}</p>
+          <div className="relative z-10">
+            <header className="mb-10 text-center sm:text-left">
+              <motion.h1 
+                className="text-4xl sm:text-5xl font-bold tracking-tight mb-2"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                Let's <span className="text-white/60">Connect</span>
+              </motion.h1>
+              <p className="text-white/40 text-lg">Have a vision? Let's bring it to life.</p>
+            </header>
+
+            <div className="space-y-2">
+              <FormField label="Full Name" icon={User} error={errors.Name}>
+                <input
+                  type="text"
+                  autoComplete="name"
+                  className={inputClasses(errors.Name)}
+                  placeholder="John Doe"
+                  {...register("Name", {
+                    required: "What should I call you?",
+                    maxLength: { value: 30, message: "Name is too long" },
+                  })}
+                />
+              </FormField>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+                <FormField label="Email Address" icon={Mail} error={errors.mail}>
+                  <input
+                    type="email"
+                    autoComplete="email"
+                    className={inputClasses(errors.mail)}
+                    placeholder="john@example.com"
+                    {...register("mail", {
+                      required: "I'll need your email to reply",
+                      pattern: {
+                        value: /^\S+@\S+$/i,
+                        message: "Please enter a valid email",
+                      },
+                    })}
+                  />
+                </FormField>
+
+                <FormField label="Contact Number" icon={Phone} error={errors.phone}>
+                  <input
+                    type="tel"
+                    autoComplete="tel"
+                    className={inputClasses(errors.phone)}
+                    placeholder="+1 (555) 000-0000"
+                    {...register("phone")}
+                  />
+                </FormField>
+              </div>
+
+              <FormField label="Your Message" icon={MessageSquare} error={errors.messageInTheTextarea}>
+                <textarea
+                  className={`${inputClasses(errors.messageInTheTextarea)} resize-none`}
+                  placeholder="Tell me about your project..."
+                  rows="5"
+                  {...register("messageInTheTextarea", {
+                    required: "Please leave a message",
+                    minLength: { value: 10, message: "Message is a bit short" },
+                  })}
+                />
+              </FormField>
+            </div>
+
+            <motion.button
+              type="submit"
+              disabled={status === "loading" || status === "success"}
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              className={`
+                w-full mt-6 relative overflow-hidden py-4 rounded-xl font-bold tracking-widest uppercase text-sm
+                transition-all duration-500 flex items-center justify-center gap-3
+                ${status === "success" 
+                  ? "bg-green-500 text-white" 
+                  : status === "error"
+                  ? "bg-red-500 text-white"
+                  : "bg-white text-black hover:bg-white/90 shadow-lg shadow-white/5"}
+                disabled:cursor-not-allowed
+              `}
+            >
+              <AnimatePresence mode="wait">
+                {status === "loading" ? (
+                  <motion.div
+                    key="loading"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex items-center gap-2"
+                  >
+                    <Loader2 className="animate-spin" size={20} />
+                    <span>Processing...</span>
+                  </motion.div>
+                ) : status === "success" ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2"
+                  >
+                    <CheckCircle2 size={20} />
+                    <span>Message Sent</span>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="idle"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="flex items-center gap-2"
+                  >
+                    <Send size={18} />
+                    <span>Send Message</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+
+            <AnimatePresence>
+              {status === "error" && (
+                <motion.p 
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="text-center text-red-400 text-sm mt-4 font-medium"
+                >
+                  {errorMessage}
+                </motion.p>
               )}
-            </div>
-
-            {/* Contact No */}
-            <div className="w-full flex flex-col">
-              <label className="font-semibold text-xl sm:text-2xl">Contact No:</label>
-              <input
-                type="tel"
-                className="w-full m-2 border border-white text-xl rounded-2xl p-2 bg-transparent"
-                placeholder="+91 9876543210"
-                {...register("phone")}
-              />
-            </div>
-
-            {/* Email */}
-            <div className="w-full flex flex-col">
-              <label className="font-semibold text-xl sm:text-2xl">Email</label>
-              <input
-                type="email"
-                className={`w-full m-2 border text-xl rounded-2xl p-2 bg-transparent ${
-                  errors.mail ? "border-red-500" : "border-white"
-                }`}
-                placeholder="you@gmail.com"
-                {...register("mail", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^\S+@\S+$/i,
-                    message: "Invalid email format",
-                  },
-                })}
-              />
-              {errors.mail && (
-                <p className="text-sm text-red-500 ml-2">{errors.mail.message}</p>
-              )}
-            </div>
-
-            {/* Message */}
-            <div className="w-full flex flex-col">
-              <label className="font-semibold text-xl sm:text-2xl">Message</label>
-              <textarea
-                className={`w-full m-2 border text-xl rounded-2xl p-2 bg-transparent ${
-                  errors.messageInTheTextarea ? "border-red-500" : "border-white"
-                }`}
-                placeholder="your message..."
-                rows="4"
-                {...register("messageInTheTextarea", {
-                  required: "Message is required",
-                  minLength: { value: 5, message: "Minimum 5 characters" },
-                  maxLength: { value: 100, message: "Max 100 characters" },
-                })}
-              />
-              {errors.messageInTheTextarea && (
-                <p className="text-sm text-red-500 ml-2">
-                  {errors.messageInTheTextarea.message}
-                </p>
-              )}
-            </div>
+            </AnimatePresence>
           </div>
-
-          <button
-            type="submit"
-            className="w-full hover:bg-white hover:text-black border duration-200 py-2 rounded-2xl my-2 transition-colors"
-          >
-            Submit
-          </button>
-
-          <p className="text-center text-sm mt-2">{result}</p>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 
