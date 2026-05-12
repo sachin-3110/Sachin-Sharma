@@ -26,7 +26,7 @@ const About = () => {
         <div id="textContainer" className="flex flex-col mt-5">
           <div id="text" className="text-2xl">
             Hello! I'm a{" "}
-            <span className={`${specialwords}`}>Front-End Developer</span> with
+            <span className={`${specialwords}`}>Full-Stack Developer</span> with
             a love for creating beautiful,{" "}
             <span className={`${specialwords}`}>
               functional digital experiences.

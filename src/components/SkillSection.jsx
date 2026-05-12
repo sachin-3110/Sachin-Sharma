@@ -5,12 +5,12 @@ const SkillSection = () => {
     const [seeMore,setSeeMore]=useState(false)
     const technicalSkills = {
     languages: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"],
-    frameworksLibraries: ["React.js","NodeJs", "Next.js", "Redux", "TailwindCSS", "Routing"],
+    frameworksLibraries: ["React.js","NodeJs", "Next.js", "Redux", "TailwindCSS","React Routing","Express"],
     animation:["motion","spline","lenis","gsap"],
-    backend_API: ["RESTful APIs", "Axios"],
+    backend_API: ["RESTful APIs", "Axios", "NodeJs"],
     databases: ["MySQL", "MongoDB"],
     versionControl: ["Git", "GitHub"],
-    tooling: ["VS Code", "Cursor AI", "Jenkins","NodeJs"],
+    tooling: ["VS Code", "Cursor AI", "Jenkins","Antigravity"],
   };
 
   const softSkills = [
