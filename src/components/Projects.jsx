@@ -26,24 +26,18 @@ const Projects = () => {
           <span className="-rotate-y-180 relative top-2 inline-block">L</span>
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <ProjectGrids />
-        <div className="flex justify-center w-screen m-10">
-          <motion.div
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.5, repeat: 0 }}
-          >
-            <div className="w-fit p-2 rounded-full pl-5 bg-black/20 backdrop:blur-2xl flex font-semibold justify-center items-center">
-              A click away from 35+ Projects
+        <div className="w-full flex justify-center ">
+          
+            <div className="w-fit p-2 bg-black/20 rounded-full px-5 backdrop:blur-2xl flex font-semibold justify-center items-center">
+              A click away from 40+ Projects
               <a href="https://github.com/sachin-3110" target="blank">
                 <button className="bg-white text-black p-1 cursor-pointer m-2 rounded-full font-semibold border hover:text-white hover:bg-black">
                   GitHub
                 </button>
               </a>
             </div>
-          </motion.div>
         </div>
       </div>
     </motion.div>

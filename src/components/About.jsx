@@ -19,8 +19,8 @@ const About = () => {
       transition={{ duration: 0.2 }}
       className="w-full md:w-[85%] px-2 h-full mb-5 md:mb-20 flex min-h-[50vh] flex-col md:flex-row"
     >
-      <div className="px-10 w-full md:max-w-[55%] text-xl flex flex-col mt-5 h-full">
-        <div className="sm:text-8xl text-7xl relative sm:right-10 font-bold font-[solenoid]">
+      <div className="px-2 sm:px-10  w-full md:max-w-[55%] flex flex-col mt-5 h-full">
+        <div className="sm:text-8xl text-6xl relative sm:right-10 font-bold font-[solenoid]">
           PERSONA
         </div>
         <div id="textContainer" className="flex flex-col mt-5">

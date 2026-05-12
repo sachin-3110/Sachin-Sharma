@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import { span } from "motion/react-client";
 import LowerNav from "../LowerNav";
@@ -26,7 +26,8 @@ const HeroSection = () => {
     <motion.div className="text-center ">
       {charArray.map((elem, index) => {
         return (
-          <motion.div
+          <Link to={"/"}>
+             <motion.div
             key={index}
             initial={{opacity:0, y:20}}
             animate={{opacity:1, y:0}}
@@ -35,6 +36,7 @@ const HeroSection = () => {
           >
             {elem}
           </motion.div>
+          </Link>
         );
       })}
     </motion.div>

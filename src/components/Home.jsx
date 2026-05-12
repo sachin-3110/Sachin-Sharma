@@ -27,6 +27,8 @@ const Home = () => {
   const techStack = [
     { name: "React", icon: Code2 },
     { name: "Next.js", icon: Terminal },
+    { name: "TypeScript", icon: Code2 },
+    { name: "JavaScript", icon: Code2 },
     { name: "Tailwind", icon: Palette },
     { name: "GSAP", icon: Sparkles },
   ];
@@ -126,7 +128,6 @@ const Home = () => {
           <div className="hidden lg:block lg:col-span-4 border-l border-white/10 pl-12">
             <motion.div variants={itemVariants} className="space-y-12">
               <div>
-                <h3 className="text-white/30 text-sm font-bold uppercase tracking-widest mb-4">Philosophy</h3>
                 <p className="text-white/60 italic text-lg leading-relaxed">
                   "Design that moves. Code that breathes. Precision in every pixel, performance in every line."
                 </p>
@@ -167,11 +168,11 @@ const Home = () => {
             <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-white/30">Who Am I?</h2>
             <p className="text-3xl sm:text-4xl md:text-5xl font-bold font-[solenoid] tracking-wider leading-tight">
               A <span className="text-white/40">Full-Stack</span> Developer <br />
-              with a soul for <span className="text-white/40 italic">Design</span>.
+              with a soul for <span className="text-white/40 italic">Design & Development</span>.
             </p>
           </div>
           <div className="space-y-8">
-            <p className="text-xl text-white/50 font-light leading-relaxed">
+            <p className="text-xl text-white/70 font-light leading-relaxed">
               Based in India, I specialize in building scalable web applications that don't just work—they inspire. 
               With a deep understanding of both frontend aesthetics and backend architecture, I create seamless digital journeys.
             </p>

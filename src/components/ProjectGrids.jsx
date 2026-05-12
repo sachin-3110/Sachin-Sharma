@@ -7,6 +7,10 @@ import MontBold from "../assets/montBoldss.png";
 import Resqore from "../assets/Resqore.jpg";
 import LocomotiveScroll from "locomotive-scroll";
 import DKSDesign from "../assets/dksDesign.png"
+import Bishambu from "../assets/bishambu.png"
+import VedicNature from "../assets/vedicnature.png"
+import NovoCurve from "../assets/novocurve.png"
+import AartiGems from "../assets/aartigemsmine.png"
 
 import { Link } from "react-router-dom";
 
@@ -60,6 +64,34 @@ const ProjectGrids = () => {
       gitLink: null,
       hostedLink: "https://dk-sdesign.vercel.app/index.html",
       projectDescp: "DKS Design is a professionally crafted landing website developed for a BIM (Building Information Modeling) engineering firm, with a strong focus on clarity, credibility, and lead generation. The primary goal of this project was to present complex engineering services in a simplified, visually structured format that resonates with both technical and non-technical audiences.",
+    },
+    {
+      projectName: "Bishambu",
+      projectSS: Bishambu,
+      gitLink: null,
+      hostedLink: "https://bishambu.com/",
+      projectDescp: "Bishambu is a comprehensive booking and lead generation website for a tent and catering service, offering diverse event management solutions.",
+    },
+    {
+      projectName: "VedicNature",
+      projectSS: VedicNature,
+      gitLink: null,
+      hostedLink: "https://vedic-nature.vercel.app/product/101",
+      projectDescp: "VedicNature is a premium perfume eCommerce site featuring smooth scrolling animations and interactive hover effects for an immersive luxury experience.",
+    },
+    {
+      projectName: "Novo Cure Tensile",
+      projectSS: NovoCurve,
+      gitLink: null,
+      hostedLink: "https://novo-cure.vercel.app/",
+      projectDescp: "A professional corporate website for Novo Cure Tensile, a specialized tensile structure company, showcasing their architectural solutions and expertise.",
+    },
+    {
+      projectName: "Aarti Gems Mine",
+      projectSS: AartiGems,
+      gitLink: null,
+      hostedLink: "https://agm-olive.vercel.app/",
+      projectDescp: "A sleek and modern digital presence for Aarti Gems Mine, highlighting their unique gemstones and jewelry collections with a clean, high-end design.",
     },
   ]);
 
