@@ -18,6 +18,7 @@ import ObysAgency from "../assets/ObysAgency.jpg";
 import Refokus from "../assets/Refokus.jpg";
 import VedicNature from "../assets/vedicnature.png";
 
+
 const experienceHighlights = [
   {
     role: "Full Stack Developer Intern",
@@ -113,9 +114,6 @@ const ExperienceAndProject = () => {
       <div className="mb-20">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-white/10 mb-8">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-white/40">
-              Part 01
-            </span>
             <h3 className="text-2xl sm:text-3xl font-bold font-[solenoid] text-white tracking-wide mt-1">
               Work Experience Glance
             </h3>
@@ -183,12 +181,9 @@ const ExperienceAndProject = () => {
       <Line margin="4" />
 
       {/* Part 2: Selected Projects Snapshot */}
-      <div className="mt-20">
+      
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-white/10 mb-8">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-white/40">
-              Part 02
-            </span>
             <h3 className="text-2xl sm:text-3xl font-bold font-[solenoid] text-white tracking-wide mt-1">
               Selected Creations Glance
             </h3>
@@ -276,7 +271,6 @@ const ExperienceAndProject = () => {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 };
