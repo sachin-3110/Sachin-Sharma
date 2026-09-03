@@ -14,7 +14,7 @@ const Container = () => {
       <ScrollToTop />
       <div className="w-full flex justify-center items-center  pt-20">
         <Outlet />
-        <div className="cursor-pointer h-10 w-10 flex justify-center items-center rounded-full bg-pink-200  animate-bounce text-black fixed bottom-10 right-10">
+        <div className="cursor-pointer h-10 w-10 flex justify-center items-center rounded-full bg-white  animate-bounce text-black fixed bottom-10 right-10">
           <a href="https://docs.google.com/document/d/1mOPAIQYMvfd4sbyOTViGodG_n6spdLSd/edit?usp=sharing&ouid=101771593206391722329&rtpof=true&sd=true">
             <FileDown />
           </a>
