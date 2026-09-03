@@ -168,12 +168,28 @@
 }
 
 
-.masonary-container{
-    column:300px;
-    column-gap:20px
+.masonary-container,
+.masonry-grid {
+    columns: 1;
+    column-gap: 1.5rem;
 }
 
-.masonary-item{
+@media (min-width: 640px) {
+    .masonary-container,
+    .masonry-grid {
+        columns: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .masonary-container,
+    .masonry-grid {
+        columns: 3;
+    }
+}
+
+.masonary-item,
+.masonry-item {
     break-inside: avoid;
-    margin-bottom:20px
+    margin-bottom: 1.5rem;
 }

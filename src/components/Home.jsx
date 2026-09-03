@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowUpRight, Github, Linkedin, Mail, Sparkles, Code2, Palette, Terminal } from "lucide-react";
 import Line from "./Line";
-import Experience from "./Experience";
+import ExperienceAndProject from "./ExperienceAndProject";
 
 const Home = () => {
   const containerVariants = {
@@ -187,6 +187,11 @@ const Home = () => {
             </NavLink>
           </div>
         </div>
+      </motion.div>
+
+      {/* Experience & Projects Glance */}
+      <motion.div variants={itemVariants} className="mt-8 border-t border-white/10 pt-8 w-full">
+        <ExperienceAndProject />
       </motion.div>
     </motion.section>
   );
