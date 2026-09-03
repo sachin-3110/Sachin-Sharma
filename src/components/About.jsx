@@ -7,17 +7,19 @@ import LocomotiveScroll from "locomotive-scroll";
 import SkillSection from "./SkillSection";
 import Line from "./Line";
 import Headings from "./Headings";
+import Experience from "./Experience";
 const About = () => {
   const specialwords =
     "bg-gray-500 text-white hover:bg-white hover:text-black duration-500 px-2 ";
   const scroll = new LocomotiveScroll();
 
   return (
+   <div className="w-[80%] mx-auto">
     <motion.div
       initial={{ filter: "blur(20px)" }}
       animate={{ filter: "blur(0px)" }}
       transition={{ duration: 0.2 }}
-      className="w-full md:w-[85%] px-2 h-full mb-5 md:mb-20 flex min-h-[50vh] flex-col md:flex-row"
+      className="w-full px-2 h-full mb-5 md:mb-20 flex min-h-[50vh] flex-col md:flex-row"
     >
       <div className="px-2 sm:px-10  w-full md:max-w-[55%] flex flex-col mt-5 h-full">
         <div className="sm:text-8xl text-6xl relative sm:right-10 font-bold font-[solenoid]">
@@ -106,6 +108,10 @@ const About = () => {
         </div>
       </div>
     </motion.div>
+    <motion.div>
+      <Experience/>
+    </motion.div>
+    </div>
   );
 };
 

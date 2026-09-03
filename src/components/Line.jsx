@@ -3,7 +3,7 @@ import React from "react";
 const Line = ({ color = "white", hoverColor = "black", margin = "2" }) => {
   return (
     <div
-      className={`group w-[80%] h-[1px] rounded-full transition-all duration-300`}
+      className={`group w-[100%] h-[0.5px] rounded-full transition-all duration-300 opacity-20`}
       style={{
         marginTop: `${margin}rem`,
         marginBottom: `${margin}rem`,

@@ -7,6 +7,7 @@ import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Projects from './components/Projects.jsx'
 import Contact from './components/Contact/Contact.jsx'
+import Experience from './components/Experience.jsx'
 const router=createBrowserRouter([{
   path:"/",
   element:<App/>,
@@ -18,6 +19,10 @@ const router=createBrowserRouter([{
     {
       path:"about",
       element:<About/>
+    },
+    {
+      path:"experience",
+      element:<Experience/>
     },
     {
       path:"contact",

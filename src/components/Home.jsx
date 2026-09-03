@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowUpRight, Github, Linkedin, Mail, Sparkles, Code2, Palette, Terminal } from "lucide-react";
+import Line from "./Line";
+import Experience from "./Experience";
 
 const Home = () => {
   const containerVariants = {
@@ -17,10 +19,10 @@ const Home = () => {
 
   const itemVariants = {
     initial: { opacity: 0, y: 20 },
-    animate: { 
-      opacity: 1, 
+    animate: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     },
   };
 
@@ -42,16 +44,16 @@ const Home = () => {
     >
       {/* Dynamic Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.15, 0.1],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           className="absolute -top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-white/5 blur-[120px] rounded-full"
         />
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             scale: [1, 1.3, 1],
             opacity: [0.05, 0.1, 0.05],
           }}
@@ -72,7 +74,7 @@ const Home = () => {
         {/* Hero Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-8">
-            <motion.h1 
+            <motion.h1
               variants={itemVariants}
               className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[0.9] tracking-widest font-[solenoid] text-white mb-8"
             >
@@ -81,25 +83,25 @@ const Home = () => {
               EXPERIENCES
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               variants={itemVariants}
               className="max-w-2xl text-lg sm:text-xl md:text-2xl text-white/50 font-light leading-relaxed mb-10"
             >
-              I bridge the gap between <span className="text-white">imagination</span> and <span className="text-white">implementation</span>. 
+              I bridge the gap between <span className="text-white">imagination</span> and <span className="text-white">implementation</span>.
               Specializing in high-performance web solutions that move users and brands forward.
             </motion.p>
 
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-16">
-              <NavLink 
+              <NavLink
                 to="/project"
                 className="group relative px-8 py-4 bg-white text-black rounded-full font-bold transition-all hover:pr-12 flex items-center gap-2"
               >
                 <span>View Projects</span>
                 <ArrowUpRight className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all" size={20} />
               </NavLink>
-              
-              <NavLink 
+
+              <NavLink
                 to="/contact"
                 className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full font-bold text-white transition-all backdrop-blur-sm"
               >
@@ -112,7 +114,7 @@ const Home = () => {
               <span className="text-xs uppercase tracking-widest text-white/30 font-semibold">Stack</span>
               <div className="flex flex-wrap gap-3">
                 {techStack.map((tech) => (
-                  <div 
+                  <div
                     key={tech.name}
                     className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 transition-colors group"
                   >
@@ -141,10 +143,10 @@ const Home = () => {
                     { icon: Linkedin, href: "https://linkedin.com/in/sachin-sharma-296082248" },
                     { icon: Mail, href: "mailto:sachinsharma8005@gmail.com" }
                   ].map((social, i) => (
-                    <a 
-                      key={i} 
-                      href={social.href} 
-                      target="_blank" 
+                    <a
+                      key={i}
+                      href={social.href}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-white/40 hover:text-white transition-colors"
                     >
@@ -159,7 +161,7 @@ const Home = () => {
       </div>
 
       {/* Who Am I Section (Integrated/Below) */}
-      <motion.div 
+      <motion.div
         variants={itemVariants}
         className="mt-32 border-t border-white/10 pt-20 pb-20"
       >
@@ -173,10 +175,10 @@ const Home = () => {
           </div>
           <div className="space-y-8">
             <p className="text-xl text-white/70 font-light leading-relaxed">
-              Based in India, I specialize in building scalable web applications that don't just work—they inspire. 
+              Based in India, I specialize in building scalable web applications that don't just work—they inspire.
               With a deep understanding of both frontend aesthetics and backend architecture, I create seamless digital journeys.
             </p>
-            <NavLink 
+            <NavLink
               to="/about"
               className="inline-flex items-center gap-3 text-white font-bold group border-b border-white/20 pb-2 hover:border-white transition-all"
             >

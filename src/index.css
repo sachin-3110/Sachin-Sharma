@@ -166,3 +166,14 @@
     @apply bg-background text-foreground;
     }
 }
+
+
+.masonary-container{
+    column:300px;
+    column-gap:20px
+}
+
+.masonary-item{
+    break-inside: avoid;
+    margin-bottom:20px
+}
