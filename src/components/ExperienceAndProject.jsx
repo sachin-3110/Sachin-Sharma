@@ -21,7 +21,7 @@ import VedicNature from "../assets/vedicnature.png";
 
 const experienceHighlights = [
   {
-    role: "Full Stack Developer Intern",
+    role: "Frontend Developer Intern",
     company: "WhatBytes",
     period: "June 2026 – July 2026",
     mode: "Remote",
@@ -31,7 +31,7 @@ const experienceHighlights = [
     tech: ["Next.js", "React.js", "Python", "Django", "RBAC"],
   },
   {
-    role: "Full Stack Developer Intern",
+    role: "Frontend Developer Intern",
     company: "Reef Technologies",
     period: "April 2026 – June 2026",
     mode: "On-site",
