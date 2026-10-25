@@ -17,7 +17,7 @@ import {
 const experiences = [
   {
     id: "whatbytes",
-    role: "Full Stack Developer Intern",
+    role: "Frontend Developer Intern",
     company: "WhatBytes",
     mode: "Remote",
     location: "Bangalore, Karnataka",
@@ -43,7 +43,7 @@ const experiences = [
   },
   {
     id: "reef",
-    role: "Full Stack Developer Intern",
+    role: "Frontend Developer Intern",
     company: "Reef Technologies",
     mode: "On-site",
     location: "Dwarka, New Delhi",
